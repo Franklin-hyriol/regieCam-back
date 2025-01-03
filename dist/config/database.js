@@ -10,7 +10,8 @@ dotenv_1.default.config();
 const sequelize = new sequelize_1.Sequelize(process.env.AIVEN_DATABASE, process.env.AIVEN_USER, process.env.AIVEN_PASSWORD, {
     host: process.env.AIVEN_HOST,
     port: parseInt(process.env.AIVEN_PORT),
-    dialect: process.env.AIVEN_DIALECT,
+    dialect: 'mysql',
+    dialectModule: require('mysql2'),
     logging: false
 });
 exports.default = sequelize;
