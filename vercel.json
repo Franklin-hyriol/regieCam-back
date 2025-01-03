@@ -3,7 +3,7 @@
     "builds": [
         {
             "src": "dist/index.js",
-            "use": "@now/node"
+            "use": "@vercel/node"
         }
     ],
     "routes": [
@@ -11,9 +11,5 @@
             "src": "/(.*)",
             "dest": "dist/index.js"
         }
-    ],
-    "scripts": {
-        "build": "npm run build",
-        "start": "node dist/index.js"
-    }
+    ]
 }
