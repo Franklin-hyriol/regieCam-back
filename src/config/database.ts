@@ -12,6 +12,7 @@ const sequelize = new Sequelize(
         host: process.env.AIVEN_HOST!,
         port: parseInt(process.env.AIVEN_PORT!),
         dialect: process.env.AIVEN_DIALECT! as 'mysql',
+        dialectModule: require('mysql2'),
         logging: false
     }
 );
