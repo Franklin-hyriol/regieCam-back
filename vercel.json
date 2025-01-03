@@ -1,11 +1,19 @@
 {
     "version": 2,
-    "buildCommand": "npm install && npm run build",
-    "outputDirectory": "dist",
+    "builds": [
+        {
+            "src": "dist/index.js",
+            "use": "@now/node"
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/dist/index.js"
+            "dest": "dist/index.js"
         }
-    ]
+    ],
+    "scripts": {
+        "build": "npm run build",
+        "start": "node dist/index.js"
+    }
 }
